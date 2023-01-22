@@ -1,0 +1,137 @@
+body {
+  background-color: rgb(0, 217, 241);
+}
+
+[type=checkbox] {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+form {
+  width: 300px;
+  justify-content: center;
+  display: flex;
+  gap: 50px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+.slide {
+  cursor: pointer;
+  width: 60px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  background-color: rgb(204, 204, 204);
+  padding: 0 5px;
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.slider {
+  width: 20px;
+  height: 20px;
+  transition: 0.3s ease-in;
+  background: white;
+}
+
+[type=checkbox]:checked + label .slide .slider {
+  transform: translateX(150%);
+}
+
+.style1 {
+  transition: all 0.3s;
+  border-radius: 25px;
+  background-color: #123;
+}
+.style1 .slider {
+  border-radius: 50%;
+  background-color: white;
+}
+
+.style2 {
+  border-radius: 0;
+  background-color: orange;
+}
+.style2 .slider {
+  border-radius: 0;
+  background-color: white;
+}
+
+.style3 {
+  border-radius: 25px;
+  background-color: rgb(204, 204, 204);
+}
+.style3 .slider {
+  border-radius: 0;
+  background-color: white;
+}
+
+.style4 {
+  border-radius: 25px;
+  background-color: gold;
+}
+.style4 .slider {
+  border-radius: 0;
+  background-color: #123;
+}
+.style4 .slider {
+  -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+          clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+}
+
+.style5 {
+  border-radius: 25px;
+  background-color: red;
+  background-image: url(/check-solid.svg), url(/xmark-solid.svg);
+  background-repeat: no-repeat;
+  background-position: 5px 5px, calc(100% - 7.5px) 3px;
+  background-size: 20px, 15px;
+}
+.style5 .slider {
+  border-radius: 50%;
+  background-color: white;
+}
+
+[type=checkbox]:checked + label .style1 {
+  border-radius: 20px;
+  background-color: rgb(1, 107, 152);
+}
+[type=checkbox]:checked + label .style1 .slider {
+  border-radius: 50%;
+  background-color: white;
+}
+[type=checkbox]:checked + label .style2 {
+  border-radius: 0;
+  background-color: purple;
+}
+[type=checkbox]:checked + label .style2 .slider {
+  border-radius: 0;
+  background-color: rgb(255, 255, 255);
+}
+[type=checkbox]:checked + label .style3 {
+  border-radius: 25px;
+  background-color: rgb(0, 150, 243);
+}
+[type=checkbox]:checked + label .style3 .slider {
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+}
+[type=checkbox]:checked + label .style3 .slider {
+  transform: rotate(360deg) translateX(150%);
+}
+[type=checkbox]:checked + label .style4 .slider {
+  -webkit-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+          clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+}
+[type=checkbox]:checked + label .style5 {
+  border-radius: 25px;
+  background-color: green;
+}
+[type=checkbox]:checked + label .style5 .slider {
+  border-radius: 50%;
+  background-color: white;
+}/*# sourceMappingURL=style.css.map */

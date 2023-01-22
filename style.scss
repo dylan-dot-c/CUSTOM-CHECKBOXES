@@ -1,0 +1,132 @@
+$grey: rgb(204, 204, 204);
+$white: white;
+$red: red;
+$green: green;
+$purple: purple;
+
+body {
+    background-color: rgb(0, 217, 241);
+}
+
+[type="checkbox"] {
+    display: none;
+}
+* {
+    box-sizing: border-box;
+}
+
+form  {
+    width: 300px;
+    justify-content: center;
+    display: flex;
+    gap: 50px;
+    margin: auto;
+    flex-wrap: wrap;
+}
+@mixin slide-con($border, $bg-color, $bg-checked, $slider-bg, $slider-checked, $border-rad) {
+    border-radius: $border;
+    background-color: $bg-color;
+    
+    .slider {
+        border-radius: $border-rad;
+        background-color: $slider-checked;
+    }
+}
+
+.slide {
+    cursor: pointer;
+    width: 60px;
+    height: 30px;
+    display: inline-flex;
+    align-items: center;
+    background-color: rgb(204, 204, 204);
+    padding: 0 5px;
+    transition: all .3s;
+    overflow: hidden;
+}
+
+.slider {
+    width: 20px;
+    height: 20px;
+    transition: .3s ease-in;
+    background: white;
+}
+
+[type="checkbox"]:checked {
+    &+label {
+
+        
+        .slide {
+            // background-color: red;
+
+            .slider {
+                transform: translateX(150%);
+            }
+        }
+    }
+}
+
+.style1 {
+    transition: all .3s;
+    @include slide-con(25px, #123, $green, $white, white, 50%)
+}
+
+.style2 {
+    @include slide-con(0, orange, $green, $white, white, 0)
+
+}
+
+.style3 {
+    @include slide-con(25px, $grey, $green, $white, white, 0);
+
+}
+
+.style4 {
+    @include slide-con(25px, gold, $green, #123, #123, 0);
+    // border: 4px solid green;
+    // background-color: transparent;
+
+    .slider {
+        clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+    }
+}
+
+.style5 {
+    @include slide-con(25px, $red, $green, $red, white, 50%);
+
+    background-image: url(/check-solid.svg), url(/xmark-solid.svg);
+    background-repeat: no-repeat;
+    background-position: 5px 5px, calc(100% - 7.5px) 3px;
+    background-size: 20px, 15px;
+}
+
+
+[type=checkbox]:checked + label {
+    & .style1 {
+        @include slide-con(20px, rgb(1, 107, 152), yellow, red, $white, 50%)
+    }
+
+    & .style2 {
+        @include slide-con(0, $purple, rgb(255, 0, 166), rgb(84, 24, 24), rgb(255, 255, 255), 0)
+    }
+
+    & .style3 {
+        @include slide-con(25px, rgb(0, 150, 243), rgb(255, 0, 166), rgb(84, 24, 24), rgb(255, 255, 255), 50%);
+
+        .slider {
+            transform: rotate(360deg) translateX(150%);
+        }
+    }
+
+    & .style4 {
+
+        .slider {
+            
+            clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+        }
+    }
+
+    & .style5 {
+        @include slide-con(25px, $green, $green, $red, $white, 50%);
+    }
+}
